@@ -11,6 +11,9 @@ counter = 0
 for i in file_object:
     if counter not in banned:
         split_line = i.split(",")
+        if split_line[0] != 'Date':
+            date_split = split_line[0].split("/")
+            split_line[0] = date_split[2] + "/" + date_split[1] + "/" + date_split[0]
         split_line.remove(split_line[3])
         new_file.write(split_line[0] + "," + split_line[1] + "," + split_line[2] + "," + split_line[3] + "," + split_line[4] + "," + split_line[5])
     counter += 1

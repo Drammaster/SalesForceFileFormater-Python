@@ -6,7 +6,7 @@ file_object = open(filename, "r")
 new_file = open("formated.csv", "w+")
 
 #Standard ASB records that are not needed for the Salesforce records
-banned = [0, 1, 2, 3, 4, 5, 7]
+banned = [0, 1, 2, 3, 4, 6]
 counter = 0
 
 #Formating and moving values
@@ -16,6 +16,7 @@ for i in file_object:
         #Fromat date from NZT to UST
         if split_line[0] != 'Date':
             date_split = split_line[0].split("/")
+            #print(split_line)
             split_line[0] = date_split[2] + "/" + date_split[1] + "/" + date_split[0]
 
         #Removing Cheque Column
@@ -25,4 +26,3 @@ for i in file_object:
 
 file_object.close()
 new_file.close()
-#User inputs the name of his/her new formated file

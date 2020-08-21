@@ -24,5 +24,6 @@ for i in file_object:
         new_file.write(split_line[0] + "," + split_line[1] + "," + split_line[2] + "," + split_line[3] + "," + split_line[4] + "," + split_line[5])
     counter += 1
 
+#Closes files
 file_object.close()
 new_file.close()
